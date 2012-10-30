@@ -23,7 +23,7 @@
 use strict;
 use warnings;
 use 5.012;
-use JSON::RPC::Client;
+use JSON::RPC::Legacy::Client;
 use Term::ShellUI;
 use Data::Dump qw[dump];
 use Getopt::Long;
@@ -79,7 +79,7 @@ $obj->{'jsonrpc'} = $config{jsonrpc};
 my $res;
 
 # creating and configuring client
-my $client = new JSON::RPC::Client;
+my $client = new JSON::RPC::Legacy::Client;
 $client->version("2.0");
 $client->ua->timeout(10);
 #$client->ua->credentials('http://127.0.0.1:3121', 'jsonrpc', 'user' => 'password');
